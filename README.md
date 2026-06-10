@@ -2,6 +2,14 @@
 
 This repository contains my learning work, experiments, notes, and projects for LLM Zoomcamp 2026.
 
+## Learning in Public
+
+I am using this repository as a public learning log for LLM Zoomcamp. The workflow is documented in:
+
+- `docs/learning_in_public.md` - process, checklist, cadence, and submission tracking
+- `docs/learning_log.md` - chronological learning notes
+- `docs/post_templates.md` - reusable LinkedIn/X post drafts
+
 ## Structure
 
 - `notebooks/` - Jupyter notebooks and experiments
