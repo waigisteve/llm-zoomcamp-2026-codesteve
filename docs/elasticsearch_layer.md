@@ -100,7 +100,7 @@ Use this notebook for the Elasticsearch experiment:
 notebooks/elasticsearch_rag.ipynb
 ```
 
-Keep `rag_cleaned.ipynb` as a minimal OpenAI smoke test. The Elasticsearch notebook is the place to load FAQ data, index it into Elasticsearch, compare retrieval, and run RAG.
+Keep `notebooks/rag_cleaned.ipynb` as a minimal OpenAI smoke test. The Elasticsearch notebook is the place to load FAQ data, index it into Elasticsearch, compare retrieval, and run RAG.
 
 Run the notebook cells in order:
 
@@ -235,7 +235,7 @@ If the RAG answer fails but retrieval works:
 
 - Confirm `.env` contains `OPENAI_API_KEY`.
 - Restart the notebook kernel and run cells from the top.
-- Test the OpenAI client separately with `rag_cleaned.ipynb`.
+- Test the OpenAI client separately with `notebooks/rag_cleaned.ipynb`.
 
 ## Stopping Elasticsearch
 

@@ -2,12 +2,12 @@
 
 This document compares the current saved versions of:
 
-- `rag_cleaned.ipynb`
-- `RAG_helper.ipynb`
+- `notebooks/rag_cleaned.ipynb`
+- `notebooks/RAG_helper.ipynb`
 
 Both notebooks currently implement the same simple OpenAI call flow. They do not yet run the full RAG pipeline from `ingest.py` and `rag_helper.py`.
 
-## `rag_cleaned.ipynb`
+## `notebooks/rag_cleaned.ipynb`
 
 ```mermaid
 flowchart TD
@@ -22,7 +22,7 @@ flowchart TD
     I --> J["Return response.output_text"]
 ```
 
-## `RAG_helper.ipynb`
+## `notebooks/RAG_helper.ipynb`
 
 ```mermaid
 flowchart TD
@@ -39,7 +39,7 @@ flowchart TD
 
 ## Comparison
 
-| Area | `rag_cleaned.ipynb` | `RAG_helper.ipynb` | Difference |
+| Area | `notebooks/rag_cleaned.ipynb` | `notebooks/RAG_helper.ipynb` | Difference |
 | --- | --- | --- | --- |
 | Environment loading | Uses `load_dotenv(".env")` | Uses `load_dotenv(".env")` | None |
 | API client | Creates `OpenAI()` | Creates `OpenAI()` | None |
@@ -119,9 +119,9 @@ flowchart TD
 
 ## Recommendation
 
-Keep `rag_cleaned.ipynb` as the minimal OpenAI smoke test notebook.
+Keep `notebooks/rag_cleaned.ipynb` as the minimal OpenAI smoke test notebook.
 
-Use `RAG_helper.ipynb` for the full RAG workflow by adding cells that import and use:
+Use `notebooks/RAG_helper.ipynb` for the full RAG workflow by adding cells that import and use:
 
 ```python
 from ingest import load_faq_data, build_index
