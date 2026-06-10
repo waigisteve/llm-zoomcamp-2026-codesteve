@@ -17,7 +17,7 @@ flowchart TD
     D -- "No" --> E["Raise RuntimeError"]
     D -- "Yes" --> F["Create OpenAI client"]
     F --> G["Define llm(prompt)"]
-    G --> H["Call llm(\"Hey, what's up?\")"]
+    G --> H["Call llm with a test greeting"]
     H --> I["OpenAI Responses API"]
     I --> J["Return response.output_text"]
 ```
@@ -32,7 +32,7 @@ flowchart TD
     D -- "No" --> E["Raise RuntimeError"]
     D -- "Yes" --> F["Create OpenAI client"]
     F --> G["Define llm(prompt)"]
-    G --> H["Call llm(\"Hey, what's up?\")"]
+    G --> H["Call llm with a test greeting"]
     H --> I["OpenAI Responses API"]
     I --> J["Return response.output_text"]
 ```
