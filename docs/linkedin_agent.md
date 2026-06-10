@@ -45,6 +45,12 @@ From the project root:
 python scripts/daily_linkedin_agent.py
 ```
 
+To generate the draft and show a Windows notification from WSL:
+
+```bash
+python scripts/run_daily_linkedin_agent_with_notification.py
+```
+
 The default window is `yesterday 21:00`, which fits a daily 9:00 PM review cadence. Use a different git time window when needed:
 
 ```bash
@@ -76,13 +82,19 @@ LinkedIn does not provide a simple personal-profile "private post for approval" 
 
 ## Automation Option
 
-For local daily reminders, schedule the script with cron:
+For local daily reminders with a Windows notification, schedule the wrapper with cron:
 
 ```cron
-0 21 * * * cd /mnt/d/Projects/llm-zoomcamp-2026-codesteve && .venv/bin/python scripts/daily_linkedin_agent.py
+0 21 * * * cd /mnt/d/Projects/llm-zoomcamp-2026-codesteve && .venv/bin/python scripts/run_daily_linkedin_agent_with_notification.py >> docs/public_posts/agent.log 2>&1
 ```
 
-This creates a draft each day at 21:00 local machine time.
+This creates a draft each day at 21:00 local machine time and shows a Windows notification.
+
+If you only want to generate the draft without a notification:
+
+```bash
+python scripts/run_daily_linkedin_agent_with_notification.py --no-notify
+```
 
 ## Why It Does Not Auto-Post Yet
 
