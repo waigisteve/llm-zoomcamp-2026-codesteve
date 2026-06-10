@@ -16,6 +16,10 @@ References:
 - Track experiments, errors, fixes, and design decisions.
 - Create social posts that can be submitted for course leaderboard credit.
 
+## Public Profile
+
+LinkedIn: https://www.linkedin.com/in/stephen-waigi-4a5ba1275/
+
 ## Weekly Cadence
 
 | Day | Activity | Output |

@@ -9,6 +9,7 @@ I am using this repository as a public learning log for LLM Zoomcamp. The workfl
 - `docs/learning_in_public.md` - process, checklist, cadence, and submission tracking
 - `docs/learning_log.md` - chronological learning notes
 - `docs/post_templates.md` - reusable LinkedIn/X post drafts
+- `docs/linkedin_agent.md` - local daily LinkedIn draft generator workflow
 
 ## Structure
 
