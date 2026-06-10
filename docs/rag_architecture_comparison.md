@@ -82,6 +82,41 @@ flowchart TD
     B --> S
 ```
 
+## RAG Assistant Workflow
+
+This is the higher-level workflow view of the RAG assistant. It separates the user-facing assistant from the knowledge base and shows how retrieved documents become context for the LLM.
+
+```mermaid
+flowchart TD
+    subgraph KB["Knowledge Base"]
+        DB[("FAQ database or search index")]
+    end
+
+    subgraph APP["RAG Assistant"]
+        U["User"] -->|"Question"| A["Application"]
+        A -->|"Query"| DB
+        DB -->|"Retrieved data"| D["Top matching documents D1 to D5"]
+        D --> A
+        A --> P["Build prompt from question and context"]
+        P --> L["LLM"]
+        L --> ANS["Answer"]
+        ANS --> U
+    end
+```
+
+### Workflow Mapping
+
+| Workflow step | Current project component |
+| --- | --- |
+| User asks a question | Notebook cell or application entry point |
+| Application receives question | `RAGBase.rag(question)` |
+| Query knowledge base | `RAGBase.search()` |
+| Knowledge base | `minsearch.Index` built by `build_index(documents)` |
+| Retrieved documents | Search results from FAQ records |
+| Build prompt | `RAGBase.build_prompt()` with `PROMPT_TEMPLATE` |
+| Call LLM | `RAGBase.llm()` using OpenAI Responses API |
+| Return answer | `response.output_text` |
+
 ## Recommendation
 
 Keep `rag_cleaned.ipynb` as the minimal OpenAI smoke test notebook.
