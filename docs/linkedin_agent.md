@@ -32,7 +32,8 @@ docs/public_posts/YYYY-MM-DD-linkedin.md
 The draft includes:
 
 - progress summary
-- repo artifacts
+- repo artifact links
+- commit links
 - reflection section
 - LinkedIn post text
 - course submission checklist

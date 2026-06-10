@@ -10,6 +10,7 @@ from pathlib import Path
 DEFAULT_HASHTAGS = ["#llmzoomcamp", "#RAG", "#LearningInPublic"]
 LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/stephen-waigi-4a5ba1275/"
 DEFAULT_SINCE = "yesterday 21:00"
+DEFAULT_REPO_URL = "https://github.com/waigisteve/llm-zoomcamp-2026-codesteve"
 
 
 @dataclass(frozen=True)
@@ -79,6 +80,22 @@ def get_uncommitted_files(repo_root: Path) -> list[str]:
     return sorted(files)
 
 
+def get_repo_url(repo_root: Path) -> str:
+    try:
+        remote_url = run_git(repo_root, ["remote", "get-url", "origin"])
+    except subprocess.CalledProcessError:
+        return DEFAULT_REPO_URL
+
+    if remote_url.startswith("git@github.com:"):
+        path = remote_url.removeprefix("git@github.com:").removesuffix(".git")
+        return f"https://github.com/{path}"
+
+    if remote_url.startswith("https://github.com/"):
+        return remote_url.removesuffix(".git")
+
+    return DEFAULT_REPO_URL
+
+
 def read_latest_learning_log_entry(repo_root: Path) -> str:
     path = repo_root / "docs" / "learning_log.md"
     if not path.exists():
@@ -101,9 +118,10 @@ def build_post(
     latest_log_entry: str,
     post_date: date,
     hashtags: list[str],
+    repo_url: str,
 ) -> str:
-    commit_lines = "\n".join(f"- `{commit.sha}` {commit.subject}" for commit in commits)
-    file_lines = "\n".join(f"- `{filename}`" for filename in changed_files[:8])
+    commit_lines = "\n".join(format_commit_line(commit, repo_url) for commit in commits)
+    file_lines = "\n".join(format_file_line(filename, repo_url) for filename in changed_files[:8])
     hashtag_line = " ".join(hashtags)
 
     if not commit_lines:
@@ -112,7 +130,7 @@ def build_post(
     if not file_lines:
         file_lines = "- No changed files found in the selected window."
 
-    uncommitted_lines = "\n".join(f"- `{filename}`" for filename in uncommitted_files)
+    uncommitted_lines = "\n".join(format_file_line(filename, repo_url) for filename in uncommitted_files)
     if not uncommitted_lines:
         uncommitted_lines = "- No uncommitted files to review."
 
@@ -147,7 +165,7 @@ What I worked on:
 
 The useful learning point today was connecting the code changes to clear documentation and reproducible notebooks. This makes the project easier to revisit, explain, and share publicly.
 
-Repo: https://github.com/waigisteve/llm-zoomcamp-2026-codesteve
+Repo: {repo_url}
 
 {hashtag_line}
 
@@ -158,6 +176,15 @@ Repo: https://github.com/waigisteve/llm-zoomcamp-2026-codesteve
 - [ ] Submit the published post link through the course platform.
 - [ ] Update `docs/learning_in_public.md` with the public link and moderation status.
 """
+
+
+def format_commit_line(commit: GitCommit, repo_url: str) -> str:
+    return f"- `{commit.sha}` {commit.subject}: {repo_url}/commit/{commit.sha}"
+
+
+def format_file_line(filename: str, repo_url: str) -> str:
+    clean_filename = filename.rstrip("/")
+    return f"- `{filename}`: {repo_url}/blob/main/{clean_filename}"
 
 
 def summarize_log_entry(entry: str) -> str:
@@ -215,6 +242,7 @@ def main() -> None:
     changed_files = get_changed_files(repo_root, args.since)
     uncommitted_files = get_uncommitted_files(repo_root)
     latest_log_entry = read_latest_learning_log_entry(repo_root)
+    repo_url = get_repo_url(repo_root)
     content = build_post(
         commits=commits,
         changed_files=changed_files,
@@ -222,6 +250,7 @@ def main() -> None:
         latest_log_entry=latest_log_entry,
         post_date=post_date,
         hashtags=DEFAULT_HASHTAGS,
+        repo_url=repo_url,
     )
 
     output_path = write_post(repo_root, content, post_date)
