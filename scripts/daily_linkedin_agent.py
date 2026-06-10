@@ -9,6 +9,7 @@ from pathlib import Path
 
 DEFAULT_HASHTAGS = ["#llmzoomcamp", "#RAG", "#LearningInPublic"]
 LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/stephen-waigi-4a5ba1275/"
+DEFAULT_SINCE = "yesterday 21:00"
 
 
 @dataclass(frozen=True)
@@ -194,8 +195,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--since",
-        default="midnight",
-        help="Git log window, for example 'midnight', 'yesterday', or '2026-06-10 00:00'.",
+        default=DEFAULT_SINCE,
+        help="Git log window, for example 'yesterday 21:00', 'midnight', or '2026-06-10 21:00'.",
     )
     parser.add_argument(
         "--date",
