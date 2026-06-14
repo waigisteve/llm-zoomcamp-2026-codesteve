@@ -33,10 +33,15 @@ LinkedIn: https://www.linkedin.com/in/stephen-waigi-4a5ba1275/
 
 Before publishing a post:
 
+- Prefer a clear milestone framing such as module complete, homework complete, or project complete.
 - The post explains one concrete thing learned.
+- The post lists 3-5 specific skills or concepts learned.
 - The post includes the course hashtag: `#llmzoomcamp`.
+- On LinkedIn, tag `@Alexey Grigorev` and `@DataTalksClub`.
 - The post links to a relevant repo file, notebook, diagram, or commit.
+- When possible, include a "homework solution" or repo artifact link directly in the body of the post.
 - The post mentions the challenge, fix, or insight, not only that work was completed.
+- End with a simple call to action or reflection, not just a status statement.
 - The post avoids secrets, API keys, private tokens, and local `.env` values.
 - The post is submitted through the course platform after publishing.
 
@@ -63,11 +68,11 @@ Before publishing a post:
 
 Use this structure for most posts:
 
-1. What I worked on.
-2. What broke or confused me.
-3. What I changed.
-4. What I learned.
-5. Link to repo artifact.
+1. Milestone headline such as module complete or homework complete.
+2. One-line summary of the topic.
+3. Three to five concrete things learned.
+4. Homework solution or repo artifact link.
+5. Short closing reflection or question.
 6. Hashtag and tags.
 
 ## Maintenance Rules

@@ -42,21 +42,35 @@ Repo artifact: `[link]`
 
 ## Template 3: Module Progress Post
 
-Progress update for `#llmzoomcamp`:
+🚀 Module `[number]` of LLM Zoomcamp by `@DataTalksClub` complete!
 
-This week I worked on `[topic]`.
+Just finished `[module/topic]`. Learned how to:
 
-Key takeaways:
-- `[takeaway 1]`
-- `[takeaway 2]`
-- `[takeaway 3]`
+- ✅ `[skill 1]`
+- ✅ `[skill 2]`
+- ✅ `[skill 3]`
+- ✅ `[skill 4]`
 
-The hardest part was `[challenge]`.
-The next thing I want to improve is `[next step]`.
+Here's my homework solution: `[link]`
 
-Repo artifact: `[link]`
+Following along with this amazing free course by `@Alexey Grigorev` — who else is learning to build with LLMs?
+
+You can sign up here: `https://github.com/DataTalksClub/llm-zoomcamp/`
 
 `#llmzoomcamp` `#LearningInPublic`
+
+## Template 4: Twitter/X Module Post
+
+🤖 Module `[number]` of `#llmzoomcamp` done!
+
+Learned how to:
+- `[skill 1]`
+- `[skill 2]`
+- `[skill 3]`
+
+Homework: `[link]`
+
+Thanks `@DataTalksClub` and `@Al_Grigor`
 
 ## Draft: Elasticsearch RAG Layer
 
@@ -94,3 +108,22 @@ Repo artifacts:
 - `notebooks/RAG_helper.ipynb`
 
 `#llmzoomcamp` `#OpenAI` `#Jupyter` `#LearningInPublic`
+
+## Draft: Module 1 Completion
+
+🚀 Module 1 of LLM Zoomcamp by `@DataTalksClub` complete!
+
+Just finished Module 1 - Agentic RAG. Learned how to:
+
+- ✅ Build a RAG system from scratch in plain Python
+- ✅ Index and search documents with `minsearch`
+- ✅ Compare retrieval approaches with Elasticsearch
+- ✅ Turn the RAG pipeline into an agent with function calling
+
+Here's my homework solution: `https://github.com/waigisteve/llm-zoomcamp-2026-codesteve/blob/main/notebooks/RAG_helper.ipynb`
+
+Following along with this amazing free course by `@Alexey Grigorev` — who else is learning to build with LLMs?
+
+You can sign up here: `https://github.com/DataTalksClub/llm-zoomcamp/`
+
+`#llmzoomcamp` `#RAG` `#LearningInPublic`
