@@ -2,6 +2,37 @@
 
 Chronological notes for LLM Zoomcamp learning-in-public posts.
 
+## 2026-06-15 - RAG Helper Expanded into Agentic RAG Experiments
+
+### What I worked on
+
+- Expanded `notebooks/RAG_helper.ipynb` from a minimal OpenAI helper into a larger notebook with `RAGBase`, retrieval calls, tool-calling patterns, and agent-loop experiments.
+- Kept `notebooks/elasticsearch_rag.ipynb` aligned with the broader retrieval experiments.
+- Added dependency updates in `pyproject.toml` and `uv.lock` to support the newer agent and AI experiments.
+
+### What changed
+
+- The helper notebook moved beyond a single smoke test and now captures more of the course learning flow in one place.
+- The repo now has a clearer progression from simple LLM calls to retrieval-backed answers and agent-style loops.
+- The pushed commit for this work is `7dcd660`.
+
+### What I learned
+
+- A tiny helper notebook is useful at the start, but it becomes more valuable when it also documents the evolution toward full RAG and agent workflows.
+- Keeping retrieval and orchestration concepts visible in notebook steps makes experiments easier to revisit and explain.
+- Dependency changes should be committed alongside notebook workflow changes so the environment matches the learning artifact.
+
+### Repo artifacts
+
+- `notebooks/RAG_helper.ipynb`
+- `notebooks/elasticsearch_rag.ipynb`
+- `pyproject.toml`
+
+### Draft post status
+
+- Public post: Drafted
+- Course platform submitted: No
+
 ## 2026-06-10 - OpenAI Smoke Test and Notebook Cleanup
 
 ### What I worked on

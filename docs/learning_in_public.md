@@ -44,6 +44,7 @@ Before publishing a post:
 
 | Date | Topic | Public link | Platform submitted? | Accepted? | Notes |
 | --- | --- | --- | --- | --- | --- |
+| 2026-06-15 | RAG helper expanded into agentic RAG experiments | TBD | No | No | Commit `7dcd660` expands the helper notebook into fuller RAG and agent-loop experiments. |
 | 2026-06-10 | RAG notebook setup and OpenAI smoke test | TBD | No | No | Initial notebooks and environment fixes. |
 | 2026-06-10 | Elasticsearch retrieval layer for RAG | TBD | No | No | Added Docker Elasticsearch workflow and comparison notebook. |
 | 2026-06-10 | FAQ database schema documentation | TBD | No | No | Documented SQLite schema and FTS5 structure. |
